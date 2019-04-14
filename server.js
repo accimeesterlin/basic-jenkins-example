@@ -15,6 +15,7 @@ app.get('/api', (req, res) => {
 app.get('/about', (req, res) => {
   res.json({
     username: 'james',
+    age: 5,
   });
 });
 
