@@ -12,6 +12,12 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.get('/about', (req, res) => {
+  res.json({
+    username: 'james',
+  });
+});
+
 app.listen(PORT, () => {
   log('Server is starting at ', PORT);
 });
