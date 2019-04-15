@@ -6,6 +6,15 @@ const { log } = console;
 
 app.use(express.static('public'));
 
+app.use((req, res, next) => {
+  if (true) {
+    next();
+  }
+  res.json({
+    message: 'Not authenticated',
+  });
+});
+
 app.get('/api', (req, res) => {
   res.json({
     username: 'accimeesterlin',
