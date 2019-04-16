@@ -7,7 +7,7 @@ const { log } = console;
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
-  if (false) {
+  if (true) {
     next();
   }
   res.json({
