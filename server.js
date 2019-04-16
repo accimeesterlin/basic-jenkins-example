@@ -6,6 +6,10 @@ const { log } = console;
 
 app.use(express.static('public'));
 
+if (true) {
+  console.log('Yes it works');
+}
+
 app.listen(PORT, () => {
   log('Server is starting at ', PORT);
 });
