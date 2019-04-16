@@ -6,9 +6,27 @@ const { log } = console;
 
 app.use(express.static('public'));
 
-if (true) {
-  console.log('Yes it works');
-}
+app.use((req, res, next) => {
+  if (false) {
+    next();
+  }
+  res.json({
+    message: 'Not authenticated',
+  });
+});
+
+app.get('/api', (req, res) => {
+  res.json({
+    username: 'accimeesterlin',
+  });
+});
+
+app.get('/about', (req, res) => {
+  res.json({
+    username: 'james',
+    age: 5,
+  });
+});
 
 app.listen(PORT, () => {
   log('Server is starting at ', PORT);
