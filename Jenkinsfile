@@ -24,4 +24,18 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            script { 
+                setGitHubPullRequestStatus context: "Build successful", message: 'Build Successful', state: 'SUCCESS'
+            }
+        }
+
+        failure {
+            script {
+                setGitHubPullRequestStatus context: "Build Failure", message: 'Build Failure', state: 'FAILURE'
+            }
+        }
+    }
 }
